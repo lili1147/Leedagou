@@ -370,16 +370,53 @@
                 
               
 
-              <time title="创建时间：2019-06-20 08:45:34 / 修改时间：08:45:45" itemprop="dateCreated datePublished" datetime="2019-06-20T08:45:34+08:00">2019-06-20</time>
+              <time title="创建时间：2019-06-20 08:45:00" itemprop="dateCreated datePublished" datetime="2019-06-20T08:45:00+08:00">2019-06-20</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-06-23 19:51:34" itemprop="dateModified" datetime="2019-06-23T19:51:34+08:00">2019-06-23</time>
               
             
           </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Python/机器学习/" itemprop="url" rel="index"><span itemprop="name">机器学习</span></a></span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -411,8 +448,72 @@
       
         
           
-            <p><a href="http://ptcp44sxy.bkt.clouddn.com/2.jpg" target="_blank" rel="noopener">http://ptcp44sxy.bkt.clouddn.com/2.jpg</a><br>测试</p>
+            <h4 id="KNN算法"><a href="#KNN算法" class="headerlink" title="KNN算法"></a>KNN算法</h4><h5 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h5><h6 id="1-KNN应用领域"><a href="#1-KNN应用领域" class="headerlink" title="1.KNN应用领域"></a>1.KNN应用领域</h6><h6 id="2-KNN原理"><a href="#2-KNN原理" class="headerlink" title="2.KNN原理"></a>2.KNN原理</h6><h6 id="3-KNN算法的实现"><a href="#3-KNN算法的实现" class="headerlink" title="3.KNN算法的实现"></a>3.KNN算法的实现</h6><h6 id="4-KNN的案例"><a href="#4-KNN的案例" class="headerlink" title="4.KNN的案例"></a>4.KNN的案例</h6><h6 id="5-KNN的优缺点"><a href="#5-KNN的优缺点" class="headerlink" title="5.KNN的优缺点"></a>5.KNN的优缺点</h6><h6 id="6-KNN的改进"><a href="#6-KNN的改进" class="headerlink" title="6.KNN的改进"></a>6.KNN的改进</h6><p>一.KNN应用领域</p>
+<p>二.KNN原理</p>
+<p>用两个俗语引入KNN——K近邻算法：</p>
+<p>近朱者赤,近墨者黑;<br>物以类聚，人以群分。</p>
+<p>  KNN算法思想极度简单，所以很适合作为一个机器学习入门的算法之一。<br>      我们举一个简单的例子，判断病人的肿瘤是恶性还是良性，简单选取两个因素肿瘤大小和存在的时间。图中，横坐标代表肿瘤大小，纵坐标代表时间。红色代表的是良性的肿瘤，蓝色代表是恶性的肿瘤。<br>     <img src="http://ptcp44sxy.bkt.clouddn.com/KNN_1.png" alt="knn_1"><br>    现在又新来了一个病人，我们已知他的肿瘤大小和存在时间，需要对这个肿瘤是恶性还是良性做出预测。这个绿色代表这个新来的病人。<br>     <img src="http://ptcp44sxy.bkt.clouddn.com/KNN_2.png" alt="knn_2"><br> 首先，我们先取k=3(这个k值的取值一般需要的是先验知识，k是KNN算法里的一个超参数)，此时寻找在空间中距离这个绿色的点最近的三个点，可以发现距离它最近的3个样本的类别都为蓝色，对结果进行“投票(vote)”(蓝色:红色=3:0)，所以这个新病人的肿瘤很有可能也是一个恶性肿瘤。<br>     <img src="http://ptcp44sxy.bkt.clouddn.com/KNN_3.png" alt="knn_3"><br>     <img src="http://ptcp44sxy.bkt.clouddn.com/KNN_4.png" alt="knn_4"></p>
+<p>   k近邻算法认为，如果两个样本足够的相似，那么它们就很有可能属于同一样本。但是如果只看离它最近的一个样本是不靠谱的，所以我们选择k个样本，在与它相近的k个样本中，哪类类别的个数多，那么它就属于哪一类的样本。<br>   描述两个样本的相似性就是靠样本在特征空间中的“距离”。</p>
+<p>   KNN的工作原理(正式的解释)：存在一个样本数据集合，也称作训练样本集，并且样本集中每个数据都存在标签，即我们知道样本集中每一数据与所属分类的对应关系。输入没有标签的新数据后，将新数据的每个特征与样本集中数据对应的特征进行比较，然后算法提取样本集中特征最相似数据(最近邻)的分类标签。一般来说，我们只选择样本数据集中前k个最相似的数据。这就是k-近邻算法k的出处，通常k是取不大于20的整数。最后，选择k个最相似数据中出现次数最多的分类作为新数据的分类。</p>
+<p>   “距离”——我们通过距离的远近描述样本之间的相似性，通常描述这个距离的度量我们选择—欧式距离。</p>
+<p>   在二维和三位空间中，欧式距离公式如下：<br>   <img src="http://ptcp44sxy.bkt.clouddn.com/KNN_5.png" alt="5"><br>      我们推广到多维度下的欧式距离如下(假设有n个特征维度)：<br>    <img src="http://ptcp44sxy.bkt.clouddn.com/KNN_6.png" alt="6"></p>
+<p> 除了欧拉距离之外，还有曼哈顿距离，明可夫斯基距离等。在公式中:<br>    <img src="http://ptcp44sxy.bkt.clouddn.com/KNN_7.png" alt="7"><br>    p=1时，公式代表的时曼哈顿距离；<br>    p=2时，公式代表的数欧拉距离；<br>    …<br>    所以，p也是knn算法中的一个超参数。</p>
+<p>  超参数的定义：在机器学习的上下文中，超参数是在开始学习过程之前设置值的参数，而不是通过训练得到的参数数据。通常情况下，需要对超参数进行优化，给学习机选择一组最优超参数，以提高学习的性能和效果。</p>
+<p>  所以，到目前为止，我们已经知道了两个超参数：k 和 p </p>
+<p>  三.KNN算法的实现</p>
+<p>   建议不要只使用scikit-learn中的调用，尽可能地去自己从原理上去理解和实现。<br>   (1)不使用scikit-learn中的knn<br>   将函数封装成class.</p>
+   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">   # -*- coding: utf-8 -*-</span><br><span class="line"># @Author: leedagou</span><br><span class="line"># @Date:   2018-12-19 17:27:05</span><br><span class="line"># @Last Modified by:   leedagou</span><br><span class="line"># @Last Modified time: 2019-06-23 17:45:12</span><br><span class="line"></span><br><span class="line">import numpy as np</span><br><span class="line">from math import sqrt</span><br><span class="line">from collections import Counter</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">class KNNClassifier:</span><br><span class="line">    def __init__(self):</span><br><span class="line">        &apos;&apos;&apos;</span><br><span class="line">        类的初始化，初始化下x_train,y_train,k为空</span><br><span class="line">        &apos;&apos;&apos;</span><br><span class="line">        self._x_train = None</span><br><span class="line">        self._y_train = None</span><br><span class="line">        self._k = None</span><br><span class="line"></span><br><span class="line">    def MyKnnClassifiy(self, x_train, y_train, x, k):</span><br><span class="line">        &apos;&apos;&apos;</span><br><span class="line">        主函数：实现简单的投票制（少数服从多数） 传入x_train,y_train,k以及新的x</span><br><span class="line">        1.断言 传入数据的维度特征必须一致</span><br><span class="line">        2.使用欧式距离计算,并添加到列表distances中</span><br><span class="line">        3.使用numpy中的argsort函数按照大小进行排序并返回大小的索引值得到near_index</span><br><span class="line">        4.使用索引值从y_train取出类别，得到top_y</span><br><span class="line">        5.使用Counter函数得到字典类型的votes,key是类别值，value是key的个数值，调用most_common返回预测x的类别</span><br><span class="line">        &apos;&apos;&apos;</span><br><span class="line">        assert x_train.shape[0] == y_train.shape[0], &apos;x must have same size as y&apos;</span><br><span class="line">        assert x_train.shape[1] == x.shape[0], &apos;the fetauers size must same&apos;</span><br><span class="line"></span><br><span class="line">        self._x_train = x_train</span><br><span class="line">        self._y_train = y_train</span><br><span class="line">        self._k = k</span><br><span class="line"></span><br><span class="line">        distances = []</span><br><span class="line">        for item in x_train:</span><br><span class="line">            d = sqrt(np.sum((item - x)**2))</span><br><span class="line">            distances.append(d)</span><br><span class="line">        # distances = [sqrt(np.sum((item - x)**2)) for item in _x_train]</span><br><span class="line">        near_index = np.argsort(distances)</span><br><span class="line">        print(&apos;near_index: &apos;, near_index)</span><br><span class="line">        topK_y = [y_train[i] for i in near_index[:k]]</span><br><span class="line">        print(&apos;top_y: &apos;, topK_y)</span><br><span class="line">        votes = Counter(topK_y)</span><br><span class="line">        print(&apos;votes: &apos;, votes)</span><br><span class="line">        return votes.most_common(1)[0][0]</span><br></pre></td></tr></table></figure>
 
+
+<p>   调用方法：<br>   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">   x = [[1.23, 2.122], [2.3, 3.122], [3.6, 4.47], [3.22, 4.56]]</span><br><span class="line">y = [1, 0, 0, 0]</span><br><span class="line">x_train = np.array(x)</span><br><span class="line">y_train = np.array(y)</span><br><span class="line">x0 = [2.1, 3.2]</span><br><span class="line">x0 = np.array(x0)</span><br><span class="line">my_knn = KNNClassifier()</span><br><span class="line">#得到预测y_predict</span><br><span class="line">y_predict = my_knn.MyKnnClassifiy(x_train, y_train, x0, 3)</span><br></pre></td></tr></table></figure></p>
+<p>   (2)scikit-learn中的knn<br>   可以参考scikit-learn官方文档：<a href="https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsClassifier.html#sklearn.neighbors.KNeighborsClassifier" target="_blank" rel="noopener">https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsClassifier.html#sklearn.neighbors.KNeighborsClassifier</a></p>
+<p>   sklearn中的KNeighborsClassifier有着许多的参数<br>   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">class sklearn.neighbors.KNeighborsClassifier(n_neighbors=5, weights=’uniform’, algorithm=’auto’, leaf_size=30, p=2, metric=’minkowski’, metric_params=None, n_jobs=None, **kwargs)</span><br></pre></td></tr></table></figure></p>
+<table>
+<thead>
+<tr>
+<th>params</th>
+<th align="right">解释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>n_neighbors</td>
+<td align="right">整型，默认值为5。这就是k值，可以根据选择进行调整</td>
+</tr>
+<tr>
+<td>weights</td>
+<td align="right">用于表示每个样本的权重，在确定k值后在选择样本时加入权重的因素。默认是uniform，还可以选择 distance或者用户自定义的函数。在KNN的改进中解释这个权重。</td>
+</tr>
+<tr>
+<td>algorithm</td>
+<td align="right">算法，快速k近邻搜索算法，默认参数为auto，可以理解为算法自己决定合适的搜索算法。除此之外还可以选择ball_tree，kd_tree，brute ，构建线性搜索或着构建树搜索增加搜索效率。</td>
+</tr>
+<tr>
+<td>leaf_size</td>
+<td align="right">这是在选择使用ball_tree或者kd_tree算法时所需的参数。叶子的数量大小，默认为30，叶子大小的选择会影响搜索的速度。</td>
+</tr>
+<tr>
+<td>metric</td>
+<td align="right">距离度量公式的选择，默认使用的是minkowski，即明可夫斯基距离，这时当p=2时，是欧式距离。</td>
+</tr>
+<tr>
+<td>p</td>
+<td align="right">p值的选择关系到使用哪种距离度量。默认使用p=2。计算法使用欧式距离度量。</td>
+</tr>
+<tr>
+<td>metric_params</td>
+<td align="right">距离度量的其他参数，一般是指为None</td>
+</tr>
+<tr>
+<td>n_jobs</td>
+<td align="right">并行处理设置。默认为1，临近点搜索并行工作数。如果为-1，那么CPU的所有cores都用于并行工作</td>
+</tr>
+</tbody></table>
+<p>   四.KNN案例<br>       knn的案例有很多，例如鸢尾花的分类。。。</p>
+<p>   我们今天使用Kaggle的一个比赛的数据进行KNN分类的实现，这是经典的一个数据集——MINIST手写数字的识别，这个堪称是机器学习中的Hello world。<br>    我们通过使用KNN分类方法，参加这个比赛并可以获得排名。<br>    <img src="http://ptcp44sxy.bkt.clouddn.com/KNN_8.png" alt="8"><br>    因为这个比赛要求你提交一个submit.csv,这是你给出的预测结果，然后网站会和正确的结果相比较最终给出你的模型预测的准确率并排名。<br>    提交结果时需要科学上网才可以提交你的结果上去，否则会失败。<br>    代码如下：<br>    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line">    # -*- coding: utf-8 -*-</span><br><span class="line"># @Author: leedagou</span><br><span class="line"># @Date:   2019-01-16 23:19:33</span><br><span class="line"># @Last Modified by:   leedagou</span><br><span class="line"># @Last Modified time: 2019-06-23 19:34:17</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">import pandas as pd</span><br><span class="line">import numpy as np</span><br><span class="line">from collections import Counter</span><br><span class="line">import csv</span><br><span class="line">from sklearn.neighbors import KNeighborsClassifier</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def del_data(path):</span><br><span class="line"></span><br><span class="line">    train_data = pd.read_csv(path)</span><br><span class="line">    target = []</span><br><span class="line">    matrix = []</span><br><span class="line">    for item in train_data.values[:]:</span><br><span class="line">        target.append(item[0])</span><br><span class="line">        matrix.append(item[1:])</span><br><span class="line">    matrix = np.array(matrix)</span><br><span class="line">    return target, matrix</span><br><span class="line"></span><br><span class="line"># 42000条测试集  ，使用knn进行预测分类</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&apos;&apos;&apos;</span><br><span class="line">def myknn(my_array, train_matrix, labels, k):</span><br><span class="line">    distances = []</span><br><span class="line">    for data in train_matrix[:]:</span><br><span class="line">        distance = np.sqrt(np.sum((my_array - data)**2))</span><br><span class="line">        distances.append(distance)</span><br><span class="line">    near_index = np.argsort(distances)</span><br><span class="line">    labels_index = [labels[i] for i in near_index[:k]]</span><br><span class="line">    votes = Counter(labels_index)</span><br><span class="line">    # print(votes)</span><br><span class="line">    return votes.most_common(1)[0][0]</span><br><span class="line">print(votes) 返回的是字典Counter(&#123;&apos;A&apos;: 2, &apos;B&apos;: 1&#125;)</span><br><span class="line">&apos;&apos;&apos;</span><br><span class="line"></span><br><span class="line">if __name__ == &apos;__main__&apos;:</span><br><span class="line">    my_knn = KNeighborsClassifier(algorithm=&apos;auto&apos;, leaf_size=30, metric=&apos;minkowski&apos;,</span><br><span class="line">                                  metric_params=None, n_jobs=1, n_neighbors=3, p=2,</span><br><span class="line">                                  weights=&apos;uniform&apos;)</span><br><span class="line">    file = open(&apos;submit.csv&apos;, &apos;a&apos;, newline=&apos;&apos;)</span><br><span class="line">    csv_write = csv.writer(file, dialect=&apos;excel&apos;)</span><br><span class="line">    title = [&apos;ImageId&apos;, &apos;Label&apos;]</span><br><span class="line">    csv_write.writerow(title)</span><br><span class="line">    path = &apos;F:/DataSet/digit-recognizer/train.csv&apos;</span><br><span class="line">    train_target, train_matrix = del_data(path)</span><br><span class="line">    print(len(train_target))</span><br><span class="line">    print(train_matrix.shape)</span><br><span class="line">    my_knn.fit(train_matrix, train_target)</span><br><span class="line">    test_data = pd.read_csv(&apos;F:/DataSet/digit-recognizer/test.csv&apos;)</span><br><span class="line">    length = len(test_data)</span><br><span class="line">    i = 1</span><br><span class="line">    for item in test_data.values:</span><br><span class="line">        predict = myknn(item, train_matrix, train_target, 5)</span><br><span class="line">        predict = my_knn.predict([item])</span><br><span class="line">        new_list = []</span><br><span class="line">        new_list.append(i)</span><br><span class="line">        new_list.append(predict[0])</span><br><span class="line">        csv_write.writerow(new_list)</span><br><span class="line">        i = i + 1</span><br><span class="line">        print(item)</span><br></pre></td></tr></table></figure></p>
+<p> 代码运行后生成submit.csv。提交到网站中，最后的准确率在0.97157，排名在2000多名左右。因为现在使用的都是神经网络模型等，其准确率基本都是1了，所以排名靠后,top%70。</p>
+<p>   五.KNN的优缺点</p>
+<p>   六.KNN的改进方法</p>
+<h6 id="最近真的很忙啊"><a href="#最近真的很忙啊" class="headerlink" title="最近真的很忙啊"></a>最近真的很忙啊</h6>
           
         
       
@@ -800,6 +901,25 @@
               
 
               
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
 
               
                 
@@ -816,7 +936,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">2</span>
+                      
+                    
+                    <span class="site-state-item-count">3</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>

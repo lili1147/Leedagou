@@ -98,18 +98,18 @@
 
 
 
-  <meta name="description" content="1.AHP2.模糊综合评价3.code">
-<meta name="keywords" content="risk assessement,AHP">
+  <meta name="description" content="1.拼写检查思想(1) 建立历史语料词库，统计历史语料词库中单词出现的次数。 (2)    对输入单词进行“编辑距离”的选择。即对输入的单词做增加，删除修改，插入一个字母或者两个字母。当然输错一个字母的概率远大于输错两个字母的。 (3) 因为某些单词进行增加，删除，修改，插入两个字母最后产生的可能性太多，所以只选择出现在历史语料库中的单词。 2.Code1234567891011121314151">
+<meta name="keywords" content="Python, Machine learning, Django">
 <meta property="og:type" content="article">
-<meta property="og:title" content="AHP + 模糊综合评价">
-<meta property="og:url" content="https://www.leedagou.xyz/2019/08/04/AHP-模糊综合评价-1/index.html">
+<meta property="og:title" content="简单贝叶斯应用(二)—拼写检查">
+<meta property="og:url" content="https://www.leedagou.xyz/2019/09/18/简单贝叶斯应用-二-—拼写检查/index.html">
 <meta property="og:site_name" content="Leedagou">
-<meta property="og:description" content="1.AHP2.模糊综合评价3.code">
+<meta property="og:description" content="1.拼写检查思想(1) 建立历史语料词库，统计历史语料词库中单词出现的次数。 (2)    对输入单词进行“编辑距离”的选择。即对输入的单词做增加，删除修改，插入一个字母或者两个字母。当然输错一个字母的概率远大于输错两个字母的。 (3) 因为某些单词进行增加，删除，修改，插入两个字母最后产生的可能性太多，所以只选择出现在历史语料库中的单词。 2.Code1234567891011121314151">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-07T09:04:49.641Z">
+<meta property="og:updated_time" content="2019-09-18T01:24:15.952Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="AHP + 模糊综合评价">
-<meta name="twitter:description" content="1.AHP2.模糊综合评价3.code">
+<meta name="twitter:title" content="简单贝叶斯应用(二)—拼写检查">
+<meta name="twitter:description" content="1.拼写检查思想(1) 建立历史语料词库，统计历史语料词库中单词出现的次数。 (2)    对输入单词进行“编辑距离”的选择。即对输入的单词做增加，删除修改，插入一个字母或者两个字母。当然输错一个字母的概率远大于输错两个字母的。 (3) 因为某些单词进行增加，删除，修改，插入两个字母最后产生的可能性太多，所以只选择出现在历史语料库中的单词。 2.Code1234567891011121314151">
 
 
 
@@ -117,7 +117,7 @@
 
   
   
-  <link rel="canonical" href="https://www.leedagou.xyz/2019/08/04/AHP-模糊综合评价-1/">
+  <link rel="canonical" href="https://www.leedagou.xyz/2019/09/18/简单贝叶斯应用-二-—拼写检查/">
 
 
 
@@ -127,7 +127,7 @@
   };
 </script>
 
-  <title>AHP + 模糊综合评价 | Leedagou</title>
+  <title>简单贝叶斯应用(二)—拼写检查 | Leedagou</title>
   
 
 
@@ -330,7 +330,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.leedagou.xyz/2019/08/04/AHP-模糊综合评价-1/">
+    <link itemprop="mainEntityOfPage" href="https://www.leedagou.xyz/2019/09/18/简单贝叶斯应用-二-—拼写检查/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Leedagou">
@@ -347,7 +347,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">AHP + 模糊综合评价
+          <h1 class="post-title" itemprop="name headline">简单贝叶斯应用(二)—拼写检查
 
               
             
@@ -373,53 +373,16 @@
                 
               
 
-              <time title="创建时间：2019-08-04 23:54:00" itemprop="dateCreated datePublished" datetime="2019-08-04T23:54:00+08:00">2019-08-04</time>
+              <time title="创建时间：2019-09-18 08:59:24 / 修改时间：09:24:15" itemprop="dateCreated datePublished" datetime="2019-09-18T08:59:24+08:00">2019-09-18</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-08-07 17:04:49" itemprop="dateModified" datetime="2019-08-07T17:04:49+08:00">2019-08-07</time>
               
             
           </span>
 
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/RA/" itemprop="url" rel="index"><span itemprop="name">RA</span></a></span>
-
-                
-                
-                  ，
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/RA/PFAHP/" itemprop="url" rel="index"><span itemprop="name">PFAHP</span></a></span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -456,7 +419,10 @@
       
 
       
-        <h4 id="1-AHP"><a href="#1-AHP" class="headerlink" title="1.AHP"></a>1.AHP</h4><h4 id="2-模糊综合评价"><a href="#2-模糊综合评价" class="headerlink" title="2.模糊综合评价"></a>2.模糊综合评价</h4><h4 id="3-code"><a href="#3-code" class="headerlink" title="3.code"></a>3.code</h4>
+        <h4 id="1-拼写检查思想"><a href="#1-拼写检查思想" class="headerlink" title="1.拼写检查思想"></a>1.拼写检查思想</h4><p>(1) 建立历史语料词库，统计历史语料词库中单词出现的次数。</p>
+<p>(2)    对输入单词进行“编辑距离”的选择。即对输入的单词做增加，删除修改，插入一个字母或者两个字母。当然输错一个字母的概率远大于输错两个字母的。</p>
+<p>(3) 因为某些单词进行增加，删除，修改，插入两个字母最后产生的可能性太多，所以只选择出现在历史语料库中的单词。</p>
+<h4 id="2-Code"><a href="#2-Code" class="headerlink" title="2.Code"></a>2.Code</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line"># -*- coding: utf-8 -*-</span><br><span class="line"># @Author: leedagou</span><br><span class="line"># @Date:   2019-03-18 17:00:07</span><br><span class="line"># @Last Modified by:   leedagou</span><br><span class="line"># @Last Modified time: 2019-09-18 09:13:19</span><br><span class="line"></span><br><span class="line">import re</span><br><span class="line">import collections</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def words(text):</span><br><span class="line">    return re.findall(&apos;[a-z]+&apos;, text.lower())</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def read_text(file):</span><br><span class="line">    with open(file, &apos;r&apos;) as f:</span><br><span class="line">        content = f.read()</span><br><span class="line">    return content</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 建立历史语料库的字典，将字典默认value设置为1，当语料库中不存在时，它的词频为1</span><br><span class="line">def train(text_list):</span><br><span class="line">    model = collections.defaultdict(lambda: 1)</span><br><span class="line">    for i in text_list:</span><br><span class="line">        model[i] += 1</span><br><span class="line">    return model</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">history_dict = train(words(read_text(&apos;big.txt&apos;)))</span><br><span class="line"></span><br><span class="line">alp = &apos;abcdefghijklmnopqrstuvwxyz&apos;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def edits1(word):</span><br><span class="line">    splits = [(word[:i], word[i:]) for i in range(len(word) + 1)]</span><br><span class="line">    deletes = [a + b[1:] for a, b in splits if b]</span><br><span class="line">    transposes = [a + b[1] + b[0] + b[2:] for a, b in splits if len(b) &gt; 2]</span><br><span class="line">    replaces = [a + c + b[1:] for a, b in splits for c in alp if b]</span><br><span class="line">    inserts = [a + c + b for a, b in splits for c in alp]</span><br><span class="line">    return set(deletes + transposes + replaces + inserts)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def kown_edits2(word):</span><br><span class="line">    e1 = edits1(word)</span><br><span class="line">    set_e2 = []</span><br><span class="line">    for e2 in e1:</span><br><span class="line">        set_e2.append(edits1(e2))</span><br><span class="line">    result_e2 = []</span><br><span class="line">    for e2 in set_e2:</span><br><span class="line">        if e2 in history_dict:</span><br><span class="line">            result_e2.append(e2)</span><br><span class="line">    return result_e2</span><br><span class="line">    # return set(e2 for e1 in edits1(word) for e2 in edits1(e1) if e2 in history_dict)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def known(words):</span><br><span class="line">    return set(w for w in words if w in history_dict)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def correct(word):</span><br><span class="line">    candidates = known([word]) or known(edits1(word)) or kown_edits2(word) or [word]</span><br><span class="line">    print(candidates)</span><br><span class="line">    return max(candidates, key=history_dict.get)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">if __name__ == &apos;__main__&apos;:</span><br><span class="line">    print(correct(&apos;sorr&apos;))</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -477,17 +443,6 @@
 
     <footer class="post-footer">
       
-        
-          
-        
-        <div class="post-tags">
-          
-            <a href="/tags/risk-assessement/" rel="tag"># risk assessement</a>
-          
-            <a href="/tags/AHP/" rel="tag"># AHP</a>
-          
-        </div>
-      
 
       
       
@@ -497,8 +452,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/07/18/7-17-临摹/" rel="next" title="7.17 临摹">
-                <i class="fa fa-chevron-left"></i> 7.17 临摹
+              <a href="/2019/09/03/贝叶斯的应用/" rel="next" title="简单贝叶斯应用——spam or ham">
+                <i class="fa fa-chevron-left"></i> 简单贝叶斯应用——spam or ham
               </a>
             
           </div>
@@ -506,10 +461,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/08/07/-7-临摹/" rel="prev" title="8.7 临摹">
-                8.7 临摹 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -711,7 +662,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-AHP"><span class="nav-number">1.</span> <span class="nav-text">1.AHP</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-模糊综合评价"><span class="nav-number">2.</span> <span class="nav-text">2.模糊综合评价</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-code"><span class="nav-number">3.</span> <span class="nav-text">3.code</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-拼写检查思想"><span class="nav-number">1.</span> <span class="nav-text">1.拼写检查思想</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-Code"><span class="nav-number">2.</span> <span class="nav-text">2.Code</span></a></li></ol></div>
             
 
           </div>
@@ -891,7 +842,7 @@
   
     <script>
   window.livereOptions = {
-    refer: '2019/08/04/AHP-模糊综合评价-1/'
+    refer: '2019/09/18/简单贝叶斯应用-二-—拼写检查/'
   };
   (function(d, s) {
     var j, e = d.getElementsByTagName(s)[0];
